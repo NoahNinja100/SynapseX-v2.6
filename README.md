@@ -26,11 +26,10 @@
 #### Any virus results are false positives, it's because of sxlib.dll and SLInjector.dll (which is a part of Synapse X)
 
 ## Installation
-1. Launch the official application first to make sure you have the latest sxlib
-2. Make sure that you have [.NET Framework 4.8 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48) or newer installed
-3. Go to the [latest release](https://github.com/casperb123/SynapseXUI/releases/latest) and download **SynapseXUI.zip**
-4. Extract everything into your Synapse X folder
-5. Make sure your Synapse X folder contains these folders and files:
+1. Make sure that you have [.NET Framework 4.8 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48) or newer installed
+2. Go to the [latest release](https://github.com/casperb123/SynapseXUI/releases/latest) and download **SynapseXUI.zip**
+3. Extract everything into your new Synapse X folder
+4. Make sure your Synapse X folder contains these folders and files:
 
     ![Synapse x folder](https://user-images.githubusercontent.com/42714453/146521769-6b9c1197-6086-4c86-bc45-bb7dee146620.png)
     
