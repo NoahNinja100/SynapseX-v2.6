@@ -1,4 +1,4 @@
-## Newer Version at
+## Newer Version at https://github.com/NoahNinja100/Synapse-v3.2
 #### The development is currently discontinued, as I have made a new version
 
 ### Table of Contents
