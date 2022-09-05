@@ -46,10 +46,9 @@
 
 ## Known bugs
 - If the application crashes while loading i sadly can't do anything about it as it's because sxlib is unstable
-- Sometimes you will repeatedly get an error message saying that you need to attach Synapse X before executing a script. Right now I'm not sure if it's a sxlib problem or if it's a problem with my ui
+- Sometimes you will repeatedly get an error message saying that you need to attach Synapse X before executing a script. Right now I'm not sure if it's a sxlib problem or if it's a problem with the ui development
 - Auto attach is not currently working
 
 ## Credits
-- [CasperTheGhost#3549](https://discord.com/users/570478646851010562)
-- Synapse X developers (sxlib)
+- [noahninja100#0000](https://discord.com/users/570478646851010562)
 - [Stack Overflow](https://stackoverflow.com) for helping with errors
