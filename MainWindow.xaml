@@ -1,0 +1,123 @@
+﻿<mah:MetroWindow x:Class="SynapseXUI.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                 xmlns:root="clr-namespace:SynapseXUI"
+                 xmlns:viewmodels="clr-namespace:SynapseXUI.ViewModels"
+                 d:DataContext="{d:DesignInstance Type=viewmodels:MainWindowViewModel}"
+                 mc:Ignorable="d"
+                 Title="{Binding Path=SynapseStatus}"
+                 Height="{Binding Path=WindowSize.WindowHeight, Source={x:Static root:App.Settings}, Mode=TwoWay}"
+                 Width="{Binding Path=WindowSize.WindowWidth, Source={x:Static root:App.Settings}, Mode=TwoWay}"
+                 MinHeight="365"
+                 MinWidth="680"
+                 WindowState="{Binding Path=WindowSize.WindowState, Source={x:Static root:App.Settings}, Mode=TwoWay}"
+                 Background="{DynamicResource MahApps.Brushes.ThemeBackground}"
+                 Icon="pack://application:,,,/libs/synapse.ico"
+                 ShowIconOnTitleBar="True"
+                 SizeChanged="MetroWindow_SizeChanged"
+                 Closing="MetroWindow_Closing"
+                 PreviewMouseMove="MetroWindow_PreviewMouseMove">
+    <mah:MetroWindow.IconTemplate>
+        <DataTemplate>
+            <Grid Margin="0,4"
+                  RenderOptions.EdgeMode="Aliased"
+                  RenderOptions.BitmapScalingMode="HighQuality"
+                  PreviewMouseDown="IconGrid_PreviewMouseDown">
+                <Image Source="pack://application:,,,/libs/synapse.ico" />
+            </Grid>
+        </DataTemplate>
+    </mah:MetroWindow.IconTemplate>
+    <mah:MetroWindow.RightWindowCommands>
+        <mah:WindowCommands>
+            <Button x:Name="buttonFlyoutTools"
+                    Content="Tools"
+                    Cursor="Hand"
+                    Click="ButtonFlyoutTools_Click" />
+            <Button x:Name="buttonAttach"
+                    Content="Attach"
+                    Cursor="Hand"
+                    Click="ButtonAttach_Click" />
+        </mah:WindowCommands>
+    </mah:MetroWindow.RightWindowCommands>
+
+    <mah:MetroWindow.Flyouts>
+        <mah:FlyoutsControl>
+            <mah:Flyout x:Name="flyoutSynapseScript"
+                        Header="{Binding Path=SelectedSynapseHubScript.Name}"
+                        Position="Right"
+                        Theme="Adapt"
+                        Width="350"
+                        IsPinned="False">
+                <Grid Margin="10,0,10,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="{Binding Path=SelectedSynapseHubScript.Picture}"
+                           Stretch="UniformToFill" />
+                    <TextBlock Text="{Binding Path=SelectedSynapseHubScript.Description}"
+                               Grid.Row="1"
+                               Margin="0,10,0,0"
+                               TextWrapping="Wrap" />
+                    <Button x:Name="buttonExecuteSynapseHubScript"
+                            Content="Execute"
+                            Grid.Row="2"
+                            Padding="0,10"
+                            Style="{DynamicResource MahApps.Styles.Button.Square.Accent}"
+                            mah:ControlsHelper.ContentCharacterCasing="Normal"
+                            Click="ButtonExecuteSynapseHubScript_Click" />
+                </Grid>
+            </mah:Flyout>
+            <mah:Flyout x:Name="flyoutTools"
+                        Header="Tools"
+                        Position="Right"
+                        Theme="Adapt"
+                        Width="240"
+                        IsPinned="False">
+                <StackPanel Margin="10,0,10,10">
+                    <Button x:Name="buttonKillRoblox"
+                            Content="Kill Roblox"
+                            Padding="20,10"
+                            Click="ButtonKillRoblox_Click" />
+                    <Button x:Name="buttonReinstallRoblox"
+                            Content="Reinstall Roblox"
+                            Padding="20,10"
+                            Margin="0,5,0,0"
+                            IsEnabled="{Binding Path=ReinstallingRoblox, Converter={StaticResource InverseBooleanConverter}}"
+                            Click="ButtonReinstallRoblox_Click" />
+                    <Button x:Name="buttonUpdate"
+                            Content="Check for update"
+                            Padding="20,10"
+                            Margin="0,5,0,0"
+                            IsEnabled="{Binding Source={x:Static root:App.GitHub}, Path=CheckingForUpdate, Converter={StaticResource InverseBooleanConverter}}"
+                            Click="ButtonUpdate_Click" />
+                </StackPanel>
+            </mah:Flyout>
+        </mah:FlyoutsControl>
+    </mah:MetroWindow.Flyouts>
+
+    <Grid>
+        <mah:MetroAnimatedSingleRowTabControl x:Name="tabControlMain"
+                                              mah:TabControlHelper.Underlined="SelectedTabItem"
+                                              Padding="5">
+            <TabItem Header="Editor">
+                <UserControl x:Name="userControlEditor" />
+            </TabItem>
+            <TabItem x:Name="tabItemScriptHub"
+                     Header="Script Hub">
+                <UserControl x:Name="userControlScriptHub" />
+            </TabItem>
+            <TabItem Header="Options">
+                <UserControl x:Name="userControlOptions" />
+            </TabItem>
+        </mah:MetroAnimatedSingleRowTabControl>
+    </Grid>
+</mah:MetroWindow>
