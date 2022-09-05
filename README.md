@@ -9,9 +9,8 @@
 - [Credits](#credits)
 
 ## About
-### A custom Synapse X user interface with the following features:
-- Everything from the official UI
-- Update checker/notifier
+### A custom Roblox Executor interface with the following features:
+- Everything from the Original
 - Draggable script tabs (reorder)
 - Renamable tabs and scripts
 - Resizable scripts list
