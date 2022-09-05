@@ -33,8 +33,8 @@
 
     ![Synapse x folder](https://user-images.githubusercontent.com/42714453/146521769-6b9c1197-6086-4c86-bc45-bb7dee146620.png)
     
-6. Run SynapseXUI.exe and the UI should open
-7. Join a game, click the Attach button and have fun
+5. Run SynapseXUI.exe and the UI should open
+6. Join a game, click the Attach button and have fun
 
 ## Screenshots
 ![Synapse loader initializing](https://user-images.githubusercontent.com/42714453/138700720-5b2bec2b-b3fb-498d-bf32-d8b20c60e94e.png)
